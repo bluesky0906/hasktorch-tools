@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 707d5e9eb9bc18ce75e6e9ca3507e1440a237a612d67a71ec57fb31077dcf2d4
+-- hash: f73da0a8b5fb187df8af707fc25347b55e4aa63dd9e24052cbf23eac7863c51e
 
 name:           hasktorch-tools
 version:        0.1.0.0
@@ -112,7 +112,7 @@ executable regression
       Paths_hasktorch_tools
   hs-source-dirs:
       app/regression
-  ghc-options: -Wall -threaded -rtsopts
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       JuicyPixels
     , async
