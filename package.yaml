@@ -61,19 +61,36 @@ library:
   - Torch.Util.Chart
   
 executables:
-  # test:
-  #   main:                Main.hs
-  #   source-dirs:         app/test
-  #   ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
-  #   dependencies:
-  #     - hasktorch-tools
-#      - finite-typelits >= 0.1
+  test:
+    main:                Main.hs
+    source-dirs:         app/test
+    ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
+    dependencies:
+      - hasktorch-tools
   regression:
     main:                Main.hs
     source-dirs:         app/regression
     ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
     dependencies:
       - hasktorch-tools
+  xor-mlp:
+    main:                Main.hs
+    source-dirs:         app/xor-mlp
+    ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
+    dependencies:
+      - hasktorch-tools
+  seq-lbl:
+    main:                Main.hs
+    source-dirs:         app/seq-lbl
+    ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
+    dependencies:
+      - hasktorch-tools
+#  lstm:
+#    main:                Main.hs
+#    source-dirs:         app/lstm
+#    ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
+#    dependencies:
+#      - hasktorch-tools
 #  getCovid19data:
 #    main:                Main.hs
 #    source-dirs:         app/covid19
@@ -85,25 +102,13 @@ executables:
 #      - aeson >= 1.4
 #      - aeson-lens >= 0.5
 #      - bytestring
-  xor-mlp:
-    main:                Main.hs
-    source-dirs:         app/xor-mlp
-    ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
-    dependencies:
-      - hasktorch-tools
-#  lstm:
+#  amazon-review:
 #    main:                Main.hs
-#    source-dirs:         app/lstm
+#    source-dirs:         app/amazon-review
 #    ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
 #    dependencies:
 #      - hasktorch-tools
-  amazon-review:
-    main:                Main.hs
-    source-dirs:         app/amazon-review
-    ghc-options: [-threaded, -rtsopts, -with-rtsopts=-N]
-    dependencies:
-      - hasktorch-tools
-      - containers >= 0.6
+#      - containers >= 0.6
 tests:
   hasktorch-tools-test:
     main:                Spec.hs

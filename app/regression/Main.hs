@@ -1,7 +1,3 @@
-{-# LANGUAGE DeriveGeneric #-}
-{-# LANGUAGE MultiParamTypeClasses #-}
-{-# LANGUAGE RecordWildCards #-}
-
 module Main where
 
 --hasktorch
@@ -9,6 +5,7 @@ import Torch.Tensor (TensorLike(..),toCPU)
 import Torch.Functional (mseLoss,add)
 import Torch.NN         (sample)
 import Torch.Optim      (GD(..))
+--hasktorch-tools
 import Torch.Train      (update,showLoss,zeroTensor,saveParams) --, loadParams)
 import Torch.Control    (mapAccumM,foldLoop)
 import Torch.Layer.Linear (LinearHypParams(..),linearLayer)
@@ -28,7 +25,7 @@ main = do
     let batchLoss = foldLoop trainingData zeroTensor $ \(input,output) loss ->
                       let y' = linearLayer model $ toCPU $ asTensor input
                           y = toCPU $ asTensor output
-                      in add loss $ mseLoss y' y
+                      in add loss $ mseLoss y y'
         lossValue = (asValue batchLoss)::Float
     showLoss 5 epoc lossValue
     u <- update model opt batchLoss 5e-4
