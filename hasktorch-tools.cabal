@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f73da0a8b5fb187df8af707fc25347b55e4aa63dd9e24052cbf23eac7863c51e
+-- hash: e561d7437d6bfb29f97e29efe83af5e60ec3feb1c34dbcfb46058b75a81d357d
 
 name:           hasktorch-tools
 version:        0.1.0.0
@@ -71,12 +71,12 @@ library
     , zlib >=0.6
   default-language: Haskell2010
 
-executable amazon-review
+executable regression
   main-is: Main.hs
   other-modules:
       Paths_hasktorch_tools
   hs-source-dirs:
-      app/amazon-review
+      app/regression
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       JuicyPixels
@@ -106,12 +106,12 @@ executable amazon-review
     , zlib >=0.6
   default-language: Haskell2010
 
-executable regression
+executable seq-lbl
   main-is: Main.hs
   other-modules:
       Paths_hasktorch_tools
   hs-source-dirs:
-      app/regression
+      app/seq-lbl
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       JuicyPixels
